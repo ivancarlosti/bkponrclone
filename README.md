@@ -34,7 +34,7 @@ Artigo: https://suporte.ivancarlos.com.br/hc/pt-br/articles/25861271868301
 </p>
 <pre>nano checkbackup.sh</pre>
 <p>
-  Copie o script do link abaixo, prestando atenção nas variáveisa seguir:
+  Copie o script do link abaixo, prestando atenção nas variáveis a seguir:
 </p>
 <ul>
   <li>
