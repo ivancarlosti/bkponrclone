@@ -14,6 +14,6 @@ MAILTO="destinatario@pad.vg"
 for bucket in "${BUCKET_PATHS[@]}"; do
 	rclone_output=$(rclone lsl "$bucket" --max-age 2d)
 	if [ -z "$rclone_output" ]; then
-		aws ses send-email --from $MAILFROM --to $MAILTO --text "O $bucket parece estar desatualizado em $DAYS_THRESHOLD dias." --html "<h1>Atenção!</h1><p>O $bucket parece estar desatualizado em $DAYS_THRESHOLD dias.</p>" --subject "❌ $bucket sem atualização!"
+		aws ses send-email --from $MAILFROM --to $MAILTO --text "O $bucket parece estar desatualizado em $DAYS_THRESHOLD dias ou mais." --html "<h1>Atenção!</h1><p>O $bucket parece estar desatualizado em $DAYS_THRESHOLD dias.</p>" --subject "❌ $bucket sem atualização!"
 	fi
 done
