@@ -1,12 +1,12 @@
 #!/bin/bash
 
 FILENAMEDATE=$(date +%Y-%m-%dT%H-%M-%S)
-DATABASE=nomedoseubancodedados
-USER=root
-RCLONEREMOTE=nomedoseuremote
-BUCKET=nomedoseubucket
-WEBDIR=/opt/bitnami/apache
-WEBFOLDER=htdocs
+DATABASE=db-name
+USER=db-username-or-db-root
+RCLONEREMOTE=rclone-remote-name
+BUCKET=bucket-name
+WEBDIR=/path/of/web/dir-before-webfolder
+WEBFOLDER=htdocs-or-equivalent
 RETENTION=7d
 
 mkdir -p ./backup
