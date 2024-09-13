@@ -20,4 +20,4 @@ tar -czf ./backup/$FILENAMEDATE-WEB.tar.gz -C $WEBDIR $WEBFOLDER
 
 rclone move ./backup/$FILENAMEDATE-DB.tar.gz $RCLONEREMOTE:$BUCKET/
 rclone move ./backup/$FILENAMEDATE-WEB.tar.gz $RCLONEREMOTE:$BUCKET/
-rclone delete --min-age $RETENTION $RCLONEREMOTE:$BUCKET/
+rclone delete --min-age $RETENTION $RCLONEREMOTE:$BUCKET/ --b2-hard-delete
