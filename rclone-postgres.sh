@@ -4,11 +4,11 @@ FILENAMEDATE=$(date +%Y-%m-%dT%H-%M-%S)
 DATABASE=db-name
 USER=db-user
 RCLONEREMOTE=rclone-remote-name
-BUCKET=publicacoes-dspace
-WEBDIR1=/opt/
-WEBDIR2=/var/solr/data/
-WEBFOLDER1=dspace
-WEBFOLDER2=userfiles
+BUCKET=bucket-name
+WEBDIR=/path1/of/webdir/before/webfolder
+WEBDIR2=/path2/of/webdir/before/webfolder
+WEBFOLDER1=htdocs-or-equivalent
+WEBFOLDER2=htdocs-or-equivalent
 RETENTION=7d
 PGPASSWORD=db-user-password
 
