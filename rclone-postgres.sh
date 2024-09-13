@@ -3,6 +3,7 @@
 FILENAMEDATE=$(date +%Y-%m-%dT%H-%M-%S)
 DATABASE=db-name
 USER=db-user
+RCLONEREMOTE=rclone-remote-name
 BUCKET=publicacoes-dspace
 WEBDIR1=/opt/
 WEBDIR2=/var/solr/data/
@@ -20,9 +21,7 @@ tar -czf ./backup/$FILENAMEDATE-DB.tar.gz --remove-files ./backup/$FILENAMEDATE.
 tar -zcf ./backup/$FILENAMEDATE-$WEBFOLDER1.tar.gz --exclude=*.tar.gz -C $WEBDIR1 $WEBFOLDER1
 tar -zcf ./backup/$FILENAMEDATE-$WEBFOLDER2.tar.gz --exclude=*.tar.gz -C $WEBDIR2 $WEBFOLDER2
 
-rclone move ./backup/$FILENAMEDATE-DB.tar.gz remote:$BUCKET/
-rclone move ./backup/$FILENAMEDATE-$WEBFOLDER1.tar.gz remote:$BUCKET/
-rclone move ./backup/$FILENAMEDATE-$WEBFOLDER2.tar.gz remote:$BUCKET/
-rclone delete --min-age $RETENTION remote:$BUCKET/ --b2-hard-delete
-
-
+rclone move ./backup/$FILENAMEDATE-DB.tar.gz $RCLONEREMOTE:$BUCKET/
+rclone move ./backup/$FILENAMEDATE-$WEBFOLDER1.tar.gz $RCLONEREMOTE:$BUCKET/
+rclone move ./backup/$FILENAMEDATE-$WEBFOLDER2.tar.gz $RCLONEREMOTE:$BUCKET/
+rclone delete --min-age $RETENTION $RCLONEREMOTE:$BUCKET/ --b2-hard-delete
