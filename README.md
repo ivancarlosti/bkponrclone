@@ -10,6 +10,11 @@ These scripts generate backup of webservers and databases for backup purposes an
 * Run `crontab -e` to add execution line to run periodically
   * Suggestion to run script `/home/username/rclone.sh` everyday at 02:00:
   * `0 2 * * * cd /home/username; ./rclone.sh  >/dev/null 2>&1`
+ 
+#### Set password DB on file if needed to setup MariaDB/MySQL backup
+
+* Write and edit file `.dbpassword.cnf`
+* Setup permission running `chmod 0600 .dbpassword.cnf`
 
 #### Check the articles below for additional information (Google Translator may be required)
 
