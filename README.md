@@ -4,9 +4,12 @@ These scripts generate backup of webservers and databases for backup purposes an
 
 ## Instructions
 
+* Setup `rclone.sh` file to run backup of webserver and MariaDB/MySQL or Postgres database
 * Setup `checkbackup.sh` file to check outdated buckets
-* Setup `rclone-mariadb.sh` file to run backup of webserver and MariaDB database
-* Setup `rclone-postgres.sh` to run backup of webserver and Postgres database
+* Run `chmod +x rclone.sh` to make the script executable
+* Run `crontab -e` to add execution line to run periodically
+  * Suggestion to run script `/home/username/rclone.sh` everyday at 02:00:
+  * `0 2 * * * cd /home/username; ./rclone.sh  >/dev/null 2>&1`
 
 #### Check the articles below for additional information (Google Translator may be required)
 
