@@ -1,6 +1,6 @@
-# BackBlaze using Rclone script
+# Backup on Rclone script
 
-These scripts generate backup of webservers and databases for backup purposes and send it to BackBlase buckets configured on Rclone, also check BackBlaze repositories for outdated buckets.
+These scripts generate backup of webservers and databases for backup purposes and send it to BackBlase buckets configured on Rclone, also check BackBlaze repositories for outdated buckets and send email messages when find uptdated buckets to you through Amazon SES. You can change the script to fit it for other backup storage services and messaging.
 
 ## Instructions
 
