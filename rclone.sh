@@ -15,7 +15,6 @@ RETENTION=7d                                 # retention required before delete 
 mkdir -p ./backup
 
 # Edit accordly for MariaDB backup. You can also use for MySQL backup just changing dump application. Comment of you do not need it.
-# /opt/bitnami/mariadb/bin/mariadb-dump --defaults-extra-file=./.dbpassword.cnf -u $USER --single-transaction --skip-lock-tables --quick $DATABASE > ./backup/$FILENAMEDATE.sql
 mariadb-dump --defaults-extra-file=./.dbpassword.cnf -u $USER --single-transaction --skip-lock-tables --quick $DATABASE > ./backup/$FILENAMEDATE.sql
 
 # Ucomment and edit accordly for Postgres backup.
